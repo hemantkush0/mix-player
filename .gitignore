@@ -1,0 +1,23 @@
+# Audio files (large files)
+*.mp3
+*.wav
+*.ogg
+*.flac
+*.aac
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+.cache/
