@@ -1,0 +1,33 @@
+// This animation creates the shimmering effect
+@keyframes pulse {
+  0% {
+    background-color: #282828;
+  }
+  50% {
+    background-color: #383838;
+  }
+  100% {
+    background-color: #282828;
+  }
+}
+
+.cardContainer {
+  background-color: #181818;
+  border-radius: 8px; // Use the main border radius
+  padding: 16px;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  padding-bottom: 100%; // This creates a perfect square
+  border-radius: 4px;
+  margin-bottom: 16px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.textPlaceholder {
+  height: 16px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  animation: pulse 1.5s infinite ease-in-out;
+}

@@ -1,0 +1,68 @@
+@import '../styles/variables';
+
+.cardContainer {
+  background-color: #181818;
+  border-radius: $border-radius-main;
+  padding: 16px;
+  cursor: pointer;
+  // Use a single 'transition: all' for all animations
+  transition: all 0.2s ease-in-out;
+  position: relative;
+
+  &:hover {
+    background-color: #282828;
+    // This now correctly scales the entire card on hover
+    transform: scale(1.03); 
+    
+    .playButton {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  margin-bottom: 16px;
+
+  img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.playButton {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #1DB954; // Spotify Green
+  color: #000;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.2s ease-in-out;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cardArtist {
+  font-size: 0.875rem;
+  color: $color-text-subtle;
+  margin-top: 4px;
+}

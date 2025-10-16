@@ -1,0 +1,10 @@
+.libraryContainer h1 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+}

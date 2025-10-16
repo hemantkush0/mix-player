@@ -1,0 +1,109 @@
+@import '../styles/variables'; // ADD THIS LINE AT THE TOP
+
+.playlistHeader {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  padding: 32px;
+
+  img {
+    width: 232px;
+    height: 232px;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, .5);
+  }
+
+  .headerContent {
+    h1 {
+      font-size: 6rem;
+      font-weight: 900;
+      margin: 0.08em 0;
+    }
+    p {
+      font-weight: 700;
+    }
+  }
+}
+
+.songListWrapper {
+    padding: 24px 32px;
+    background: linear-gradient(rgba(0,0,0,0.3), $color-surface 150px);
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+
+    .playButton {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background-color: #1DB954;
+        color: #000;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+.songTable {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    text-align: left;
+    padding: 12px 8px;
+    color: $color-text-subtle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  th {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .songRow {
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    td:nth-child(2) {
+        color: $color-text;
+        font-weight: 500;
+    }
+  }
+}
+
+.likeButton {
+  background: none;
+  border: none;
+  color: $color-text-subtle;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  padding: 8px;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.likedIcon {
+  color: #1DB954;
+}
+
+.activeSong {
+  td:nth-child(2) {
+    color: #1DB954;
+  }
+}

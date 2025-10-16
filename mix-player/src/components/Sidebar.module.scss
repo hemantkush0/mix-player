@@ -1,0 +1,52 @@
+@import '../styles/variables';
+
+.sidebarContainer {
+  grid-area: sidebar;
+  background-color: $color-background;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.navBlock, .libraryBlock {
+  background-color: $color-surface;
+  border-radius: $border-radius-main;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.libraryBlock {
+    flex-grow: 1; /* This makes it fill the available space */
+}
+
+a, .libraryButton {
+    font-weight: 700;
+    color: $color-text-subtle;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: color 0.2s ease;
+    
+    &:hover {
+        color: $color-text;
+    }
+    
+    svg {
+        font-size: 1.75rem;
+    }
+}
+
+.libraryButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1rem;
+}
+// ADD THIS STYLE for the active link
+.active {
+  color: $color-text;
+}

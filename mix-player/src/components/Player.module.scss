@@ -1,0 +1,158 @@
+@import '../styles/variables';
+
+// Main container for the entire player bar
+.playerContainer {
+  grid-area: player;
+  background-color: #181818;
+  border-top: 1px solid #282828;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; // Three columns for layout
+  align-items: center;
+  padding: 0 16px;
+  gap: 32px;
+}
+
+// Section 1: Currently Playing Song Info (Left)
+.currentSongInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 180px;
+  
+  img {
+    width: 56px;
+    height: 56px;
+    border-radius: 4px;
+  }
+  .title {
+    font-weight: 600;
+  }
+  .artist {
+    font-size: 0.8rem;
+    color: $color-text-subtle;
+  }
+}
+
+// Section 2: Main Player Controls (Center)
+.playerControls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  // Container for the Prev/Play/Next buttons
+  .controlButtons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    // Style for ALL buttons (Prev/Play/Next)
+    button {
+      background: none;
+      border: none;
+      color: $color-text-subtle;
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0; // Ensures consistency
+
+      &:hover {
+        color: $color-text;
+      }
+      &:disabled {
+        color: #404040;
+        cursor: not-allowed;
+      }
+    }
+
+    // Specific style for the main Play/Pause button
+    .playButton {
+      background-color: $color-text;
+      color: #000;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        transform: scale(1.05);
+        color: #000 !important;
+      }
+      &:disabled {
+        background-color: #404040;
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+// Section 2.1: Progress Bar (Inside Player Controls)
+.progressBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  color: $color-text-subtle;
+  font-size: 0.75rem;
+
+  .slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+
+    &::-webkit-slider-runnable-track {
+      background-color: #4d4d4d;
+      border-radius: 4px;
+      height: 4px;
+    }
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      margin-top: -4px;
+      background-color: $color-text;
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+    }
+  }
+}
+
+// Section 3: Volume Controls (Right)
+// Section 3: Volume Controls (Right)
+.volumeControls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+
+  svg {
+    font-size: 1.25rem;
+    color: $color-text-subtle;
+  }
+  
+  // Use the same slider style but limit its width
+  .slider {
+    width: 100px;
+  }
+}
+// Add these new styles at the end of the file
+
+// This style will be applied to active buttons (shuffle/repeat)
+.active {
+  color: #1DB954; // Spotify Green
+}
+
+// A small dot to indicate "repeat one" mode is active
+.repeatOneIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: #1DB954;
+  border-radius: 50%;
+}

@@ -1,0 +1,22 @@
+@import '../styles/variables';
+
+.appWrapper {
+  height: 100vh;
+  width: 100vw;
+  padding: 8px;
+  display: grid;
+  grid-template-areas:
+    "sidebar main"
+    "player player";
+  grid-template-columns: $sidebar-width 1fr;
+  grid-template-rows: 1fr $player-height;
+  gap: 8px;
+}
+
+.mainContent {
+  grid-area: main;
+  background-color: $color-surface;
+  border-radius: $border-radius-main;
+  padding: 24px;
+  overflow-y: auto;
+}
